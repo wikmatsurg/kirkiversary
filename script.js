@@ -1,4 +1,5 @@
 let unixTarget = 1789064610
+let playing = 0
 window.addEventListener('load', function() {
   let kirk = document.getElementById("kirk")
   kirk.play()
@@ -6,6 +7,12 @@ window.addEventListener('load', function() {
     let unixNow = Math.floor(Date.now()/1000)
     let counter = document.getElementById("counter")
     let secs = (unixTarget - unixNow)
+    if (secs < 49) {
+      if (playing == 0) {
+        playing = 1
+        kirk.play();
+      }
+    }
     let days = Math.floor(secs/86400)
     secs -= days*86400
     let hours = Math.floor(secs/3600)
