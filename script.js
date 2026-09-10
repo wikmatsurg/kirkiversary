@@ -7,9 +7,9 @@ window.addEventListener('load', function() {
     let days = Math.floor(secs/86400)
     secs -= days*86400
     let hours = Math.floor(secs/3600)
-    secs -= days*3600
+    secs -= hours*3600
     let mins = Math.floor(secs/60)
-    secs -= days*60
+    secs -= mins*60
     counter.innerHTML = (days+" days, "+hours+" hours, "+mins+" minutes and "+secs+" seconds.")
   }, 1000)
 });
